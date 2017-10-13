@@ -23,6 +23,7 @@ public enum DiceValue {
 	
 	public static DiceValue getRandom() {
 		int random = RANDOM.nextInt(DiceValue.SPADE.ordinal());
+		//System.out.println("---- Random value generated for dice value: " + random + ". Corresponding value: " + values()[random]);
 		return values()[random];
 	}
 	

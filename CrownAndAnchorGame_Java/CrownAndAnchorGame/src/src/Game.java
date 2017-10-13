@@ -44,6 +44,7 @@ public class Game {
 		int winnings = matches * bet;
 
 		if (matches > 0) {			
+			layer.receiveBetReturned(bet);
 			player.receiveWinnings(winnings);
 		}
         return winnings;		
