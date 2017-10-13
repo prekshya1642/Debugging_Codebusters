@@ -17,7 +17,7 @@ public class Main {
 
         int totalWins = 0;
         int totalLosses = 0;
-
+ // Code should be added here asking the player to input his age
         while (true)
         {
             int winCount = 0;
