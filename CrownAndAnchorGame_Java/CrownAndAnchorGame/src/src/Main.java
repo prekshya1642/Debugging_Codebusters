@@ -30,7 +30,13 @@ public class Main {
         		// Invalid age
         		System.out.println("Invalid age! Please try again!");
         	}
-        	}
+        }
+// Once age is read, it will be checked and the game will only continue if player's age greater than 18
+        if(player_age < 18){
+        	// Player is too young, game is not allowed to start
+        	System.out.println("Player under 18 is not allowed to play the game. Terminate now!");
+        	return;
+        }
             int winCount = 0;
             int loseCount = 0;
             
