@@ -64,14 +64,14 @@ public class Main {
                 	System.out.printf("Turn %d: %s bet %d on %s\n",
                 			turn, player.getName(), bet, pick); 
 			// Testing incorrect balance increase on winning
-                	//System.out.println("----- Main.java: Starting calculation of winnings..." );
-                	//System.out.println("----- Main.java: Balance before play: " + player.getBalance());
+                	System.out.println("----- Main.java: Starting calculation of winnings..." );
+                	System.out.println("----- Main.java: Balance before play: " + player.getBalance());
                 
-                	// Bug 3: DiceValues remain the same all the time
-                	//System.out.println("--- BUG 3 detector: old dice values: " + cdv.get(0) + "," + cdv.get(1) + "," + cdv.get(2));
+                	 //Bug 3: DiceValues remain the same all the time
+                	System.out.println("--- BUG 3 detector: old dice values: " + cdv.get(0) + "," + cdv.get(1) + "," + cdv.get(2));
                 	int winnings = game.playRound(player, pick, bet);
-                	//System.out.println("----- Main.java: Winning amount: " + winnings);
-                	//System.out.println("----- Main.java: Balance after play: " + player.getBalance());
+                	System.out.println("----- Main.java: Winning amount: " + winnings);
+                	System.out.println("----- Main.java: Balance after play: " + player.getBalance());
                 	
                     cdv = game.getDiceValues();
                     //System.out.println("--- BUG 3 detector: new dice values: " + cdv.get(0) + "," + cdv.get(1) + "," + cdv.get(2));
