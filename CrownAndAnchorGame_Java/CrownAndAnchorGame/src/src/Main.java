@@ -37,6 +37,53 @@ public class Main {
         	System.out.println("Player under 18 is not allowed to play the game. Terminate now!");
         	return;
         }
+	// Bug 7: Player should be allowed to enter his name and initialize his balance here
+        System.out.print("Enter your name: ");
+        String playerName = console.readLine();
+        int playerBalance = 100;
+        System.out.print("How much is your balance: ");
+        try{
+        	playerBalance = Integer.parseInt(console.readLine());
+        	if(playerBalance < 0){
+        		playerBalance = 100;
+        		throw new Exception();
+        	}
+        }catch(Exception e){
+        	System.out.println("Invalid balance! Balance now set to " + playerBalance);
+        }
+        Player player = new Player(playerName, playerBalance);
+        // Bug 8: Bet amount should be asked here
+        // Bug 8: Min bet and max bet also notified here
+        System.out.print("How much do you want to bet(Min: 5; Max: 50): ");
+        //Default bet = 5
+        int bet = 5;
+        try{
+        	bet = Integer.parseInt(console.readLine());
+        	if(bet < 5 || bet > 50){
+        		bet = 5;
+        		throw new Exception();
+        	}
+        }catch(Exception e){
+        	System.out.println("Invalid bet! Bet set to " + bet);
+        }
+        // Bug 9: Number of times to play should be chosen by the player base on his interest. 
+        // Bug 9: It should be from 1 to 100, 5 by default
+        int num_of_play = 5;
+        System.out.print("How many times do you want to play the game?: ");
+        try{
+        	num_of_play = Integer.parseInt(console.readLine());
+        	if(num_of_play < 1 || num_of_play > 100){
+        		num_of_play = 5;
+        		throw new Exception();
+        	}
+        }catch(Exception e){
+        	System.out.println("Invalid number! Game plays 5 times by default!");
+        }
+        Game game = new Game(d1, d2, d3);
+        List<DiceValue> cdv = game.getDiceValues();
+
+        int totalWins = 0;
+        int totalLosses = 0;
 	 while (true)
         {
             int winCount = 0;
